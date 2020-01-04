@@ -17,6 +17,7 @@ export default ({ commits, React }) =>
       {commits.map(commit =>
         <article class="commit">
           <header>
+            <strong class="project">{commit.repo}</strong>
             <p class="author">{commit.author}</p>
             <p class="date">{commit.date}</p>
           </header>

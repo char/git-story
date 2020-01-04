@@ -17,16 +17,7 @@ async function* gitRepos(ctx) {
   }
 }
 
-interface Commit {
-  commit_hash: string;
-
-  author: string;
-  date: Date;
-
-  raw_message: string;
-}
-
-function getCommits(output): Commit[] {
+function getCommits(output) {
   const commits = [];
 
   enum ParseMode { HEADER, MESSAGE };
@@ -94,11 +85,11 @@ export async function build(side, ctx) {
     commits.push(...getCommits(decodeUTF8(output))
       .map(commit => ({
         message: parseCommitMessage(commit.raw_message),
+        repo,
         ...commit
       }))
       .filter(commit => commit.message.body.length > 240))    
   }
-
 
   commits = commits.sort((a, b) => a.date > b.date ? -1 : 1)
 
