@@ -4,9 +4,13 @@ async function* gitRepos(ctx) {
       const children = (await Deno.readDir(`${ctx.sourceDir}/${child.name}`))
         .map(info => info.name)
       
-      if (!(children.includes("HEAD")
-          && children.includes("objects")
-          && children.includes("refs"))) {
+      const isGitFolder = (children.includes("HEAD")
+        && children.includes("objects")
+        && children.includes("refs"))
+      
+      const containsGitFolder = children.includes(".git")
+
+      if (!(containsGitFolder || isGitFolder)) {
         continue // Not a git repository, skip it.
       }
       
