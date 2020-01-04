@@ -19,7 +19,7 @@ export default ({ commits, React }) =>
           <header>
             <strong class="project">{commit.repo}</strong>
             <p class="author">{commit.author}</p>
-            <p class="date">{commit.date}</p>
+            <p class="date">{commit.date.toISOString().substring(0, 10)}</p>
           </header>
 
           <h2>{commit.message.header}</h2>
