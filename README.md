@@ -4,6 +4,8 @@ Commit messages tell a story. `git-story` aggregates all commit messages where t
 
 Built using [side](https://github.com/half-cambodian-hacker-man/side).
 
+Read the [accompanying blog post.](https://anthony.som.codes/blog/2020-01-04-git-story/)
+
 ## Usage
 
 First, install `side`:
