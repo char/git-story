@@ -1,0 +1,37 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  background-color: white;
+}
+
+main {
+  max-width: 88ch;
+  margin: 1em auto;
+}
+
+p {
+  margin: 0;
+}
+
+.commit {
+  background-color: aliceblue;
+  padding: 1.25em;
+  margin: -1em;
+  border-radius: 6px;
+}
+
+.commit + .commit {
+  margin-top: 3em;
+}
+
+.commit h2 {
+  margin: 0;
+}
+
+.commit .body {
+  display: block;
+  margin: 0 2em;
+
+  font-family: monospace;
+  white-space: pre-wrap;
+}
