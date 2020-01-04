@@ -6,26 +6,25 @@ export default ({ commits, React }) =>
 <html>
   <head>
     <meta charset="utf-8" />
-
-    <title>Git Story</title>
-
     <link rel="stylesheet" href="styles.css" />
+    <title>Git Story</title>
   </head>
 
   <body>
     <main>
-      <h1>Git Story</h1>
+      <h1>git story</h1>
 
-    {commits.map(commit =>
-      <article class="commit">
-        <header>
-          <p class="author">{commit.author}</p>
-          <p class="date">{commit.date}</p>
-        </header>
+      {commits.map(commit =>
+        <article class="commit">
+          <header>
+            <p class="author">{commit.author}</p>
+            <p class="date">{commit.date}</p>
+          </header>
 
-        <h2>{commit.message.header}</h2>
-        <span class="body">{commit.message.body}</span>
-      </article>
-    )}</main>
+          <h2>{commit.message.header}</h2>
+          <span class="body">{commit.message.body}</span>
+        </article>
+      )}
+    </main>
   </body>
 </html>
